@@ -179,11 +179,14 @@
             </div>
         </div>
     </section>
+
     <!-- 添加下划线，与Basic Mode相同的风格 -->
-    <div style="border: #999999 1px solid;"></div>
+<!-- 替换原来的 <div style="border: #999999 1px solid;"></div> -->
+    <hr style="border: 0; height: 1px; background-color: #999999; margin: 20px 0;">
+
     <!-- 然后添加图片展示区域 -->
     <section class="hero">
-        <div class="columns" style="background: linear-gradient(#FfFfFf);">
+        <div class="columns" style="background: #FFFFFF;">
             <div class="column auto"></div>
             <div class="column is-half">
                 <div class="hero-body-long-video"
@@ -192,6 +195,12 @@
                         style="border-radius:10px; justify-content: center; align-items: center; overflow: hidden;">
                         <img src="static/assets/pipeline.png" alt="RwoR Pipeline Overview"
                             style="width: 100%; border-radius: 10px;">
+                    </div>
+                    <!-- 添加的说明文字 -->
+                    <div class="note-font" style="margin-top: 8pt; ">
+                        The top part illustrates the RwoR pipeline, which extracts actions from human hand demonstrations and trains a diffusion 
+                        model to convert these demonstrations into UMI gripper demonstrations for policy learning. The bottom part visualizes
+                        the collected human hand demonstrations and the corresponding agent execution during real robot deployment.
                     </div>
                 </div>
             </div>
