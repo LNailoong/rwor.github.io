@@ -22,6 +22,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="./static/css/index.min.css">
     <script defer src="./static/js/index.min.js"></script>
+    <style>
+        /* 移除所有卡片内容区域的空间 */
+        .card-content {
+                display: none !important;
+            }
+        /* 调整卡片内部边距，确保没有额外空间 */
+        .card-1 {
+                padding-bottom: 0 !important;
+                margin-bottom: 0 !important;
+            }   
+        /* 确保视频容器紧贴卡片底部 */
+        .card-image {
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+           
+    
+            /* 确保视频本身没有下边距 */
+        .card-image video {
+                display: block !important;
+                margin-bottom: 0 !important;
+            }
+
+            /* 确保卡片本身有圆角 */
+        .card {
+                border-radius: 10px !important;
+                overflow: hidden !important;
+            }
+
+            /* 添加卡片行之间的间距 */
+        .card-0 {
+                margin-bottom: 30px !important; /* 可以根据需要调整大小 */
+            }
+            
+            /* 最后一个卡片行不需要底部间距 */
+        .card-0:last-child {
+                margin-bottom: 0px !important;
+            } 
+    </style>
 </head>
 
 <body>
@@ -172,16 +211,13 @@
                     <div class="title is-2 sansfont" style="font-family:'Acme';color:#595959; font-size: 68px;">
                         RwoR Pipeline
                     </div>
-                    <div class="note-font" style="margin-top: -10pt; font-style: italic;">
-                        *How we convert human hand demonstrations into robot gripper demonstrations
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 添加下划线，与Basic Mode相同的风格 -->
-<!-- 替换原来的 <div style="border: #999999 1px solid;"></div> -->
+    <!-- 替换原来的 <div style="border: #999999 1px solid;"></div> -->
     <hr style="border: 0; height: 1px; background-color: #999999; margin: 20px 0;">
 
     <!-- 然后添加图片展示区域 -->
@@ -193,7 +229,7 @@
                     style="display: flex; flex-direction: column; justify-content: space-around;">
                     <div class="column-image"
                         style="border-radius:10px; justify-content: center; align-items: center; overflow: hidden;">
-                        <img src="static/assets/pipeline.png" alt="RwoR Pipeline Overview"
+                        <img src="static/assets/pipe.png" alt="RwoR Pipeline Overview"
                             style="width: 100%; border-radius: 10px;">
                     </div>
                     <!-- 添加的说明文字 -->
@@ -215,11 +251,10 @@
             <div class="columns is-centered has-text-centered">
                 <div class="container is-max-maxwidth">
                     <div class="title sansfont mode-font" style="font-family:'Acme';color:#595959;">
-                        Basic Mode
+                        Upstream Demo
                     </div>
                     <div class="note-font" style="margin-top: -10pt; font-style: italic;">
-                        *with text instruction and image instruction, generating more motion-rich videos even with
-                        out-of-domain inputs
+                        *Display human hand videos and corresponding generated UMI gripper execution videos.
                     </div>
                 </div>
             </div>
@@ -230,7 +265,7 @@
     <div style="border: #999999 1px solid;"></div>
 
 
-    <section class="hero is-light" style="padding-top: 2em;">
+    <!-- <section class="hero is-light" style="padding-top: 2em;">
         <div class="v-columns" style="display: flex; width: 100%;">
             <div class="v-column-left"></div>
 
@@ -268,52 +303,59 @@
             <div class="v-column-right"></div>
         </div>
     </section>
-
+ -->
 
     <section class="hero is-light">
         <section class="section">
             <div class="container is-clipped">
                 <div id="slide1r" class="custom-slider">
                     <div class='card-0'>
-                        <div class='card card-1'>
-                            <div class='card-image'>
-                                <video class='lazy' autoplay loop muted width='100%'>
-                                    <source data-src='videos/26_0/a-watermark.mp4' type='video/mp4'>
-                                </video>
-                            </div>
-                            <div class='card-content'>
-                                <div class='prompt'>The skull is burining, red fires, the skull exploding</div>
+                        <!-- 新添加的带文字的卡片 -->
+                        <div class="card card-1" style="margin-bottom: 15px; padding: 15px; background-color: #f5f5f5;">
+                            <div class="content" style="text-align: center;">
+                                <h4 class="title is-4" style="color: #595959; font-family: 'Acme';">Prompt</h4>
+                                <p style="color: #666666;">These examples show the transformation from human hand demonstrations to robot
+                                    gripper movements.</p>
                             </div>
                         </div>
+                        <div style="height: 15px;"></div>
+                        <div class='card card-1'>
+                            <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
+                                    <source data-src='videos/26_0/a-watermark.mp4' type='video/mp4'>
+                                </video></div>
+                        </div>
+                        <div style="height: 15px;"></div>
                         <div class='card card-1'>
                             <div class='card-image'>
                                 <video class='lazy' autoplay loop muted width='100%'>
                                     <source data-src='videos/40_0/a-watermark.mp4' type='video/mp4'>
                                 </video>
                             </div>
-                            <div class='card-content'>
+                            <!-- <div class='card-content'>
                                 <div class='prompt'>The cyber metal tiger is roaring and walking, blue light, cyberpunk
                                     street, dark, light</div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
+                    
                     <div class='card-0'>
                         <div class='card card-1'>
                             <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
                                     <source data-src='videos/2_0/2_0-b-watermark.mp4' type='video/mp4'>
                                 </video></div>
-                            <div class='card-content'>
+                            <!-- <div class='card-content'>
                                 <div class='prompt'>An angry Godzilla is roaring and raising hands, big fire is burning
                                     and bombs are exploding in the background</div>
-                            </div>
+                            </div> -->
                         </div>
+                        <div style="height: 15px;"></div>
                         <div class='card card-1'>
                             <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
                                     <source data-src='videos/127/a-3-watermark.mp4' type='video/mp4'>
                                 </video></div>
-                            <div class='card-content'>
+                            <!-- <div class='card-content'>
                                 <div class='prompt'>Rotate, rotate around the golden rabbit model</div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class='card-0'>
@@ -321,18 +363,19 @@
                             <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
                                     <source data-src='videos/103_0/a-watermark.mp4' type='video/mp4'>
                                 </video></div>
-                            <div class='card-content'>
+                            <!-- <div class='card-content'>
                                 <div class='prompt'>Coloful powder exploding</div>
-                            </div>
+                            </div> -->
                         </div>
+                        <div style="height: 15px;"></div>
                         <div class='card card-1'>
                             <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
                                     <source data-src='videos/107_0/a-4-watermark.mp4' type='video/mp4'>
                                 </video></div>
-                            <div class='card-content'>
+                            <!-- <div class='card-content'>
                                 <div class='prompt'>Girl rotate head slowly, smiling, hair fluttering, leaves floating,
                                     slowly</div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class='card-0'>
@@ -342,18 +385,20 @@
                                     <source data-src='videos/30_0_case1/a-3-watermark.mp4' type='video/mp4'>
                                 </video>
                             </div>
-                            <div class='card-content'>
+                            
+                            <!-- <div class='card-content'>
                                 <div class='prompt'>The comic girl walking along the road, hair is futtering, petal
                                     floating and falling down</div>
-                            </div>
+                            </div> -->
                         </div>
+                        <div style="height: 15px;"></div>
                         <div class='card card-1'>
                             <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
                                     <source data-src='videos/16_0/a-watermark.mp4' type='video/mp4'>
                                 </video></div>
-                            <div class='card-content'>
+                            <!-- <div class='card-content'>
                                 <div class='prompt'>Blue flowers grow out from the skull slowly</div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class='card-0'>
@@ -361,17 +406,18 @@
                             <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
                                     <source data-src='videos/134/a-2-watermark.mp4' type='video/mp4'>
                                 </video></div>
-                            <div class='card-content'>
+                            <!-- <div class='card-content'>
                                 <div class='prompt'>Boy walking in the street, butterflies flying</div>
-                            </div>
+                            </div> -->
                         </div>
+                        <div style="height: 15px;"></div>
                         <div class='card card-1'>
                             <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
                                     <source data-src='videos/49_0/a-1-watermark.mp4' type='video/mp4'>
                                 </video></div>
-                            <div class='card-content'>
+                            <!-- <div class='card-content'>
                                 <div class='prompt'>The girl is smiling and winking, hair fluttering</div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class='card-0'>
@@ -379,134 +425,20 @@
                             <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
                                     <source data-src='videos/5_0/a-2-watermark.mp4' type='video/mp4'>
                                 </video></div>
-                            <div class='card-content'>
+                            <!-- <div class='card-content'>
                                 <div class='prompt'>A cute cat pirat is sufing on the sea, it raises its hands and
                                     dances on the board, the waves are surging</div>
-                            </div>
+                            </div> -->
                         </div>
+                        <div style="height: 15px;"></div>
                         <div class='card card-1'>
                             <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
                                     <source data-src='videos/7_0/a-watermark.mp4' type='video/mp4'>
                                 </video></div>
-                            <div class='card-content'>
+                            <!-- <div class='card-content'>
                                 <div class='prompt'>A happy panda is playing guitar and singing loudly, music symbols
                                     are slowly generated from the guitar and floating in the sky</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='card-0'>
-                        <div class='card card-1'>
-                            <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                    <source data-src='videos/44_0/b-watermark.mp4' type='video/mp4'>
-                                </video></div>
-                            <div class='card-content'>
-                                <div class='prompt'>The cat in a coat is slowly raising its hand to salute, salute</div>
-                            </div>
-                        </div>
-                        <div class='card card-1'>
-                            <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                    <source data-src='videos/9_0/a-2-watermark.mp4' type='video/mp4'>
-                                </video></div>
-                            <div class='card-content'>
-                                <div class='prompt'>A kawaii squirrel is surfing and dancing on the board</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='card-0'>
-                        <div class='card card-1'>
-                            <div class='card-image'>
-                                <video class='lazy' autoplay loop muted width='100%'>
-                                    <source data-src='videos/116/a-2-watermark.mp4' type='video/mp4'>
-                                </video>
-                            </div>
-                            <div class='card-content'>
-                                <div class='prompt'>Mini batman surfing on the sea, batman dancing on the boarrd, waves
-                                    surging high</div>
-                            </div>
-                        </div>
-                        <div class='card card-1'>
-                            <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                    <source data-src='videos/13_0/a-watermark.mp4' type='video/mp4'>
-                                </video></div>
-                            <div class='card-content'>
-                                <div class='prompt'>Two jedi cats are fighting with each other in the forest</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='card-0'>
-                        <div class='card card-1'>
-                            <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                    <source data-src='videos/28_0/a-watermark.mp4' type='video/mp4'>
-                                </video></div>
-                            <div class='card-content'>
-                                <div class='prompt'>The girl is laughing, hair fluttering, butterfly is flying</div>
-                            </div>
-                        </div>
-                        <div class='card card-1'>
-                            <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                    <source data-src='videos/30_0_case3/a-watermark.mp4' type='video/mp4'>
-                                </video></div>
-                            <div class='card-content'>
-                                <div class='prompt'>The comic girl dancing on the road, hair is futtering, petal
-                                    floating and falling down, fireworks exploding in the remote</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='card-0'>
-                        <div class='card card-1'>
-                            <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                    <source data-src='videos/36_0/b-watermark.mp4' type='video/mp4'>
-                                </video></div>
-                            <div class='card-content'>
-                                <div class='prompt'>The girl is thinking, hair is fluttering, birds flying in the sky
-                                </div>
-                            </div>
-                        </div>
-                        <div class='card card-1'>
-                            <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                    <source data-src='videos/37_0/a-watermark.mp4' type='video/mp4'>
-                                </video></div>
-                            <div class='card-content'>
-                                <div class='prompt'>The boat is floating on the sea, waves are surging</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='card-0'>
-                        <div class='card card-1'>
-                            <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                    <source data-src='videos/38_0/a_SUP_500-crop-watermark.mp4' type='video/mp4'>
-                                </video></div>
-                            <div class='card-content'>
-                                <div class='prompt'>The cyber metal tiger is riding a motorcycle across the street, fast
-                                    speed, cyberpunk street, dark, light</div>
-                            </div>
-                        </div>
-                        <div class='card card-1'>
-                            <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                    <source data-src='videos/11_0/a-watermark.mp4' type='video/mp4'>
-                                </video></div>
-                            <div class='card-content'>
-                                <div class='prompt'>Batman and ironman are dancing</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='card-0'>
-                        <div class='card card-1'>
-                            <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                    <source data-src='videos/130/a-watermark.mp4' type='video/mp4'>
-                                </video></div>
-                            <div class='card-content'>
-                                <div class='prompt'>The battleship is firing, bombs exploding</div>
-                            </div>
-                        </div>
-                        <div class='card card-1'>
-                            <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
-                                    <source data-src='videos/140/a-watermark.mp4' type='video/mp4'>
-                                </video></div>
-                            <div class='card-content'>
-                                <div class='prompt'>Cyberpunk man riding a horsethrough the street, pink light, slowly
-                                </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
