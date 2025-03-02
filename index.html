@@ -23,43 +23,45 @@
     <link rel="stylesheet" href="./static/css/index.min.css">
     <script defer src="./static/js/index.min.js"></script>
     <style>
-        /* 移除所有卡片内容区域的空间 */
         .card-content {
-                display: none !important;
-            }
+            display: none !important;
+        }
+
         /* 调整卡片内部边距，确保没有额外空间 */
         .card-1 {
-                padding-bottom: 0 !important;
-                margin-bottom: 0 !important;
-            }   
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
         /* 确保视频容器紧贴卡片底部 */
         .card-image {
-                margin-bottom: 0 !important;
-                padding-bottom: 0 !important;
-            }
-           
-    
-            /* 确保视频本身没有下边距 */
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+
+        /* 确保视频本身没有下边距 */
         .card-image video {
-                display: block !important;
-                margin-bottom: 0 !important;
-            }
+            display: block !important;
+            margin-bottom: 0 !important;
+        }
 
-            /* 确保卡片本身有圆角 */
+        /* 确保卡片本身有圆角 */
         .card {
-                border-radius: 10px !important;
-                overflow: hidden !important;
-            }
+            border-radius: 10px !important;
+            overflow: hidden !important;
+        }
 
-            /* 添加卡片行之间的间距 */
+        /* 添加卡片行之间的间距 */
         .card-0 {
-                margin-bottom: 30px !important; /* 可以根据需要调整大小 */
-            }
-            
-            /* 最后一个卡片行不需要底部间距 */
+            margin-bottom: 30px !important;
+            /* 可以根据需要调整大小 */
+        }
+
+        /* 最后一个卡片行不需要底部间距 */
         .card-0:last-child {
-                margin-bottom: 0px !important;
-            } 
+            margin-bottom: 0px !important;
+        }
     </style>
 </head>
 
@@ -106,12 +108,13 @@
                         <span class="author-block sansfont">Shanghang Zhang<sup>1</sup>&nbsp;&nbsp;&nbsp;</span>
                         <span class="author-block sansfont">Hao Dong<sup>1</sup></span>
                     </div>
-                    
+
                     <div class="publication-authors shadowtext authors-font"
                         style="color: #FFFFFF;font-weight: bold;font-family:DMSerifText; margin-bottom: 4pt;">
                         <span class="author-block sansfont"><sup>1</sup>Center on Frontiers of Computing Studies, Peking
                             University&nbsp;&nbsp;</span>
-                        <span class="author-block sansfont"><sup>2</sup>University of California, Berkeley&nbsp;&nbsp;</span>
+                        <span class="author-block sansfont"><sup>2</sup>University of California,
+                            Berkeley&nbsp;&nbsp;</span>
                         <span class="author-block sansfont"><sup>*</sup>Equal Contribution </span>
                     </div>
 
@@ -202,7 +205,7 @@
     </section>
 
     <div style="border: #ffffff 20px solid;"></div>
-    
+
     <!-- 先显示标题 -->
     <section class="hero">
         <div class="hero-body-subtitle-light" style="display: block">
@@ -234,16 +237,19 @@
                     </div>
                     <!-- 添加的说明文字 -->
                     <div class="note-font" style="margin-top: 8pt; ">
-                        The top part illustrates the RwoR pipeline, which extracts actions from human hand demonstrations and trains a diffusion 
-                        model to convert these demonstrations into UMI gripper demonstrations for policy learning. The bottom part visualizes
-                        the collected human hand demonstrations and the corresponding agent execution during real robot deployment.
+                        The top part illustrates the RwoR pipeline, which extracts actions from human hand
+                        demonstrations and trains a diffusion
+                        model to convert these demonstrations into UMI gripper demonstrations for policy learning. The
+                        bottom part visualizes
+                        the collected human hand demonstrations and the corresponding agent execution during real robot
+                        deployment.
                     </div>
                 </div>
             </div>
             <div class="column auto"></div>
         </div>
     </section>
-    
+
     <div style="border: #ffffff 20px solid;"></div>
 
     <section class="hero">
@@ -297,7 +303,7 @@
                             </div> -->
                         </div>
                     </div>
-                    
+
                     <div class='card-0'>
                         <div class='card card-1'>
                             <div class='card-image'><video class='lazy' autoplay loop muted width='100%'>
@@ -345,7 +351,7 @@
                                     <source data-src='videos/30_0_case1/a-3-watermark.mp4' type='video/mp4'>
                                 </video>
                             </div>
-                            
+
                             <!-- <div class='card-content'>
                                 <div class='prompt'>The comic girl walking along the road, hair is futtering, petal
                                     floating and falling down</div>
@@ -627,7 +633,7 @@
     <div style="border: #999999 1px solid;"></div>
 
     <div style="border: #ffffff 20px solid;"></div>
-    
+
     <section class="hero">
         <div class="hero-body-subtitle-light" style="display: block">
             <div class="columns is-centered has-text-centered">
@@ -640,10 +646,10 @@
                     </div>
                 </div>
             </div>
-    
+
         </div>
     </section>
-    
+
     <div style="border: #999999 1px solid;"></div>
 
     <div style="border: #ffffff 20px solid;"></div>
@@ -689,10 +695,10 @@
                     </div>
                 </div>
             </div>
-    
+
         </div>
     </section>
-    
+
     <div style="border: #999999 1px solid;"></div>
     <section class="section">
         <div class="container">
@@ -706,7 +712,7 @@
                     </span>
                     <span>复制</span>
                 </button>
-    
+
                 <pre id="bibtex-content"
                     style="background-color: transparent; padding: 1em; white-space: pre-wrap; margin-top: 10px;">@inproceedings{heng2025rwor,
         title={RwoR: Generating Robot Demonstrations from Human Hand for Robot Policy Learning without Robot},
@@ -716,7 +722,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- 添加复制功能的JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -760,13 +766,14 @@
         });
     </script>
 
-    
+
     <div style="border: #ffffff 20px solid;"></div>
-    
+
     <footer class="footer" style="background-color: #f5f5f5; padding: 3rem 1.5rem;">
         <div class="content has-text-centered">
             <p style="color: #666666; font-size: 0.9rem;">
-                The website template is borrowed from <a href="https://makepixelsdance.github.io/">Make Pixels Dance</a>. We
+                The website template is borrowed from <a href="https://makepixelsdance.github.io/">Make Pixels
+                    Dance</a>. We
                 thank the authors for their codebase.
             </p>
         </div>
